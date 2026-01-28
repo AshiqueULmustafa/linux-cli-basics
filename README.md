@@ -38,6 +38,24 @@
 
 ---
 
+### **Directory Operations**
+
+- **mkdir (Make Directory)**  
+  Creates a new directory.
+
+  ```bash
+  $ mkdir new_folder
+  $ mkdir -p parent/child/grandchild
+  ```
+
+- **rmdir (Remove Directory)**  
+  Removes an empty directory.
+  ```bash
+  $ rmdir empty_folder
+  ```
+
+---
+
 ### **Managing Files**
 
 - **touch**  
@@ -96,6 +114,17 @@
 
 ---
 
+### **Editing Files**
+
+- **nano**  
+  A simple text editor for editing files in the terminal.
+
+  ```bash
+  $ nano file.txt
+  ```
+
+---
+
 ### **System Monitoring Commands**
 
 - **top**  
@@ -120,6 +149,31 @@
 
 ---
 
+### **Process Management**
+
+- **ps (Process Status)**  
+  Displays information about running processes.
+
+  ```bash
+  $ ps aux
+  ```
+
+- **kill**  
+  Terminates a process by its process ID (PID).
+
+  ```bash
+  $ kill 1234
+  $ kill -9 1234
+  ```
+
+- **killall**  
+  Terminates all processes with a given name.
+  ```bash
+  $ killall firefox
+  ```
+
+---
+
 ### **Searching & Finding Files**
 
 - **find**  
@@ -133,6 +187,48 @@
   Searches for a pattern within files.
   ```bash
   $ grep "error" logfile.txt
+  $ grep -i "error" logfile.txt          # Case-insensitive search
+  $ grep -r "pattern" /path/to/dir       # Recursive search in directory
+  $ grep -n "error" logfile.txt          # Show line numbers
+  $ grep -v "error" logfile.txt          # Invert match (exclude lines)
+  $ grep -c "error" logfile.txt          # Count matching lines
+  $ grep -A 3 "error" logfile.txt        # Show 3 lines after match
+  $ grep -B 3 "error" logfile.txt        # Show 3 lines before match
+  $ grep -C 3 "error" logfile.txt        # Show 3 lines before and after
+  $ grep -E "error|warning" logfile.txt  # Extended regex (multiple patterns)
+  $ grep -w "word" file.txt              # Match whole words only
+  ```
+
+---
+
+### **Text Processing**
+
+- **echo**  
+  Prints text to the terminal.
+
+  ```bash
+  $ echo "Hello, World!"
+  ```
+
+- **wc (Word Count)**  
+  Counts lines, words, and characters in a file.
+
+  ```bash
+  $ wc file.txt
+  $ wc -l file.txt
+  ```
+
+- **sort**  
+  Sorts lines in a file.
+
+  ```bash
+  $ sort file.txt
+  ```
+
+- **uniq**  
+  Removes duplicate lines from sorted data.
+  ```bash
+  $ sort file.txt | uniq
   ```
 
 ---
@@ -155,6 +251,78 @@
 
 ---
 
+### **File Transfer & Download**
+
+- **wget**  
+  Downloads files from the internet.
+
+  ```bash
+  $ wget https://example.com/file.zip
+  ```
+
+- **curl**  
+  Transfers data from or to a server.
+
+  ```bash
+  $ curl -O https://example.com/file.zip
+  ```
+
+- **scp (Secure Copy)**  
+  Securely copies files between hosts over SSH.
+  ```bash
+  $ scp file.txt user@remote:/path/to/destination
+  ```
+
+---
+
+### **Remote Access**
+
+- **ssh (Secure Shell)**  
+  Connects to a remote machine securely.
+  ```bash
+  $ ssh user@remote-server.com
+  ```
+
+---
+
+### **System Information**
+
+- **whoami**  
+  Displays the current username.
+
+  ```bash
+  $ whoami
+  ```
+
+- **uname**  
+  Shows system information.
+
+  ```bash
+  $ uname -a
+  ```
+
+- **hostname**  
+  Displays or sets the system's hostname.
+
+  ```bash
+  $ hostname
+  ```
+
+- **uptime**  
+  Shows how long the system has been running.
+
+  ```bash
+  $ uptime
+  ```
+
+- **du (Disk Usage)**  
+  Shows disk usage of files and directories.
+  ```bash
+  $ du -sh folder/
+  ```
+
+---
+
 ### **File Permissions**
 
 - **chmod**  
@@ -168,6 +336,37 @@
   Changes file ownership.
   ```bash
   $ chown user:user file.txt
+  ```
+
+---
+
+### **File Compression & Archives**
+
+- **tar**  
+  Creates or extracts archive files.
+
+  ```bash
+  $ tar -czf archive.tar.gz folder/
+  $ tar -xzf archive.tar.gz
+  ```
+
+- **zip / unzip**  
+  Compresses or extracts zip files.
+  ```bash
+  $ zip archive.zip file1.txt file2.txt
+  $ unzip archive.zip
+  ```
+
+---
+
+### **Command Shortcuts**
+
+- **alias**  
+  Creates shortcuts for commands.
+
+  ```bash
+  $ alias ll='ls -la'
+  $ alias update='sudo apt-get update && sudo apt-get upgrade'
   ```
 
 ---
